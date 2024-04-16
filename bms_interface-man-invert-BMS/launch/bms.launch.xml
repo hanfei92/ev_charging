@@ -1,0 +1,6 @@
+<launch>
+    <!-- <arg name="config_file" default="$(find-pkg-share bms_interface)/config/bs.yaml"/> -->
+    <node pkg="bms_interface" name="bms_interface" exec="bms_interface" output="screen">
+        <!-- <param from="$(var config_file)"/> -->
+    </node>
+</launch>

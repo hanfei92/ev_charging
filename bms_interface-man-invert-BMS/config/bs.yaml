@@ -1,0 +1,45 @@
+gun_type: chademo
+bms_interface:
+  loop_rate: 20.0
+  sub_topic_name:
+    from_can: /bms/from_can_bus
+  pub_topic_name:
+    to_can: /bms/to_can_bus
+    bms_state: /charging_robot/status/bms_state
+  service_name:
+    BMSSwitch: /bms/control_switch
+inverter_interface:
+  loop_rate: 20.0
+  mannual_voltage: 380.0
+  mannual_current: 10.0
+  sub_topic_name:
+    from_can: /inverter/from_can_bus
+    inverter_cmd_sub_: /charging_robot/cmd/inverter_enable
+    mps_state_sub_: /charging_robot/status/mpsbms_state
+  pub_topic_name:
+    to_can: inverter/to_can_bus
+    inverter_state_pub_: /charging_robot/status/inverter_state
+  service_name:
+    InverterSwitch: /bms/inverter_service
+mpsbms_interface:
+  loop_rate: 20.0
+  sub_topic_name:
+    from_can: /mpsbms/from_can_bus
+    bms_state_sub_: /charging_robot/status/bms_state
+    inverter_state_sub_: /charging_robot/status/inverter_state
+    task_sub_: /charging_robot/state
+  pub_topic_name:
+    to_can: mpsbms/to_can_bus
+    battery_system_pub_: /charging_robot/status/battery_system_state
+    mpsbms_state_pub_: /charging_robot/status/mpsbms_state
+    inverter_cmd_pub_: /charging_robot/cmd/inverter_enable
+  service_name: 
+    PCBSwitch: /bms/charging_service
+  modbus_para:
+    port: /dev/ttyUSB0
+    baudrate: 9600
+    parity: N
+    size: 8
+    stop_bit: 1
+    slave_addr: 1
+    delay: 500

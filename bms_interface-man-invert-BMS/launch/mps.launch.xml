@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="bms_interface" name="mpsbms_interface" exec="mpsbms_interface" output="screen"></node>
+</launch>

@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="bms_interface" name="inverter_interface" exec="inverter_interface" output="screen"></node>
+</launch>

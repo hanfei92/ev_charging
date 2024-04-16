@@ -1,0 +1,12 @@
+<launch>
+ <arg name="inverter_channel" default="can1"/>
+    <group>
+        <push-ros-namespace namespace="inverter"/>
+        <include file="$(find-pkg-share ros2_socketcan)/launch/socket_can_bridge.launch.xml">
+            <arg name="interface" value="$(var inverter_channel)"/>
+            <arg name="receiver_interval_sec" value="1.0"/>
+            <arg name="sender_timeout_sec" value="0.02"/>
+        </include>
+    </group>
+    <node pkg="bms_interface" name="inverter_interface" exec="inverter_interface" output="screen"></node>
+</launch>

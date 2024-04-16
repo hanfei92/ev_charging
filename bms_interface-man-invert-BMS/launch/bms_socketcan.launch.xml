@@ -1,0 +1,13 @@
+<launch>
+ <arg name="bms_channel" default="can0"/>
+    <group>
+        <push-ros-namespace namespace="bms"/>
+        <include file="$(find-pkg-share ros2_socketcan)/launch/socket_can_bridge.launch.xml">
+            <arg name="interface" value="$(var bms_channel)"/>
+            <arg name="receiver_interval_sec" value="1.0"/>
+            <arg name="sender_timeout_sec" value="0.02"/>
+        </include>
+    </group>
+    <node pkg="bms_interface" name="bms_interface" exec="bms_interface" output="screen">
+    </node>
+</launch>

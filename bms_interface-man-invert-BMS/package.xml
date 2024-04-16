@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>bms_interface</name>
+  <version>0.0.0</version>
+  <description>Bms interface for charging robot as a ROS2 node</description>
+  <maintainer email="thomasluk624@gmail.com">Tze Ching Luk</maintainer>
+
+  <author email="thomasluk624@gmail.com">Tze Ching Luk</author>
+
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_cmake_auto</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>
+  <depend>can_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>charging_robot_system_msgs</depend>
+  <depend>yaml-cpp</depend>
+
+  <exec_depend>ros2_socketcan</exec_depend>
+  <!-- <exec_depend>yaml-cpp</exec_depend> -->
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
